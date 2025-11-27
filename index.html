@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saleem Ramadan | Data Analytics Portfolio</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<style>
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #8B0000;
+    --light-bg: #f8f9fa;
+}
+
+/* Sticky Navbar */
+.sticky-top {
+    background-color: var(--primary-color) !important;
+}
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+.navbar-nav .nav-link:hover {
+    color: var(--accent-color) !important;
+}
+.navbar-brand {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll margin for fixed navbar */
+#home, #about, #projects, #skills, #contact {
+    scroll-margin-top: 70px;
+}
+
+/* Home anchor */
+#home {
+    display: block;
+    height: 0;
+}
+
+/* About Section */
+.about-section {
+    text-align: center;
+    padding: 6rem 1.5rem;
+    background: linear-gradient(rgba(255,255,255,0.97), rgba(255,255,255,0.97)), url('images/bg-pattern.png');
+}
+.profile-avatar {
+    width: 220px;
+    height: 220px;
+    border: 4px solid var(--primary-color);
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Projects Section */
+.projects-section {
+    background-color: var(--light-bg);
+    padding: 6rem 0;
+}
+.project-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(0,0,0,0.1);
+    height: 100%;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.project-img {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 6rem 0;
+    background-color: #ffffff;
+}
+.skill-card {
+    border: none;
+    background: var(--light-bg);
+    transition: transform 0.3s;
+    height: 100%;
+    padding: 1.5rem;
+}
+.skill-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+}
+.skill-card:hover .skill-icon {
+    color: var(--accent-color);
+}
+.skill-badge {
+    background-color: var(--primary-color);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 6rem 0;
+}
+.contact-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-btn:hover {
+    background-color: #6B0000;
+    transform: translateY(-3px);
+}
+.social-icon {
+    width: 25px;
+    filter: brightness(0) invert(1);
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(139, 0, 0, 0.25);
+}
+
+/* Resume Button */
+.resume-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    transition: all 0.3s;
+}
+.resume-btn:hover {
+    background-color: #1a252f;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-section, .projects-section, .skills-section {
+        padding: 4rem 0;
+    }
+    .profile-avatar {
+        width: 180px;
+        height: 180px;
+    }
+    .btn-lg {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔥 Sticky Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Saleem Ramadan</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ✏️ Home Section Anchor -->
+<section id="home"></section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="container">
+    <h1 class="display-4 fw-bold mb-4">Data Analytics & Industrial Engineering Expert</h1>
+    <div class="avatar-container mb-5">
+      <img src="./images/about/about.jpg" alt="Saleem Ramadan" class="profile-avatar rounded-circle">
+    </div>
+    <div class="about-content mx-auto" style="max-width: 800px;">
+      <p class="lead">I transform raw data into strategic insights using <strong>Power BI, Python, Excel,</strong> and <strong>SQL</strong>. Power BI Data Analyst Associate (Microsoft Certified) and Certified Analytics Professional (INFORMS) with 15+ years experience in operational optimization and data-driven decision making.</p>
+      <div class="mt-4 d-flex flex-wrap justify-content-center">
+        <a href="#contact" class="btn btn-lg btn-outline-danger me-3 mb-2">Contact Me</a>
+        <a href="#projects" class="btn btn-lg btn-danger me-3 mb-2">View Projects</a>
+        <a href="resume/CVSaleemRamadanJan2025.pdf" download="SaleemRamadan_Resume.pdf" class="btn btn-lg resume-btn mb-2">
+          <i class="bi bi-download me-2"></i>Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+  <div class="container">
+    <h2 class="text-center mb-5 display-5 fw-bold">Featured Projects</h2>
+    <div class="row g-4">
+      <!-- Project 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 1/project1.jpg" class="card-img-top project-img" alt="Industrial Optimization">
+          <div class="card-body">
+            <h5 class="card-title">Hydroponic Farm: Planting and Harvesting Optimization</h5>
+            <p class="card-text">This project determines the optimal planting and harvesting schedule for a hydroponic farm in Jordan, using data provided by the Agriculture Ministry. By leveraging Python, SQL, and Power BI, it maximizes profitability while accounting for productivity, volume, and market demand constraints.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Python</span>
+              <span class="badge bg-danger">Power BI</span>
+              <span class="badge bg-danger">Excel</span>
+              <a href="https://github.com/Saleem1975/Hydroponic-Farm/tree/main" class="stretched-link text-danger">View Case Study →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 2/project2.jpg" class="card-img-top project-img" alt="Supply Chain Dashboard">
+          <div class="card-body">
+            <h5 class="card-title">Blended Learning Experience: A Student Satisfaction Analysis</h5>
+            <p class="card-text">This project visualizes a student satisfaction survey on blended learning, with data collected via Google Forms and analyzed in Power BI. I performed data cleaning and transformation steps to reveal key insights for improving blended learning environments.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Power BI</span>
+              <span class="badge bg-danger">Microsoft Forms</span>
+              <span class="badge bg-danger">Minitab</span>
+              <a href="https://github.com/Saleem1975/Blended-Teaching-Survey" class="stretched-link text-danger">View Dashboard →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 3/project3.png" class="card-img-top project-img" alt="Inventory Optimization">
+          <div class="card-body">
+            <h5 class="card-title">JIB Dashboard (Excel-Based) </h5>
+            <p class="card-text">This Excel-based project presents a comprehensive Bank Loan Report Dashboard designed to analyze and visualize critical loan-related metrics for JIB. It allows stakeholders to monitor key performance indicators (KPIs), assess lending quality, and gain insights into trends and borrower profiles.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Excel</span>
+              <span class="badge bg-danger">Pivot Tables</span>
+              <span class="badge bg-danger">Financial Analysis</span>
+              <a href="https://github.com/Saleem1975/bank-loan-report-dashboard-Excel" class="stretched-link text-danger">View Analysis →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 4 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 4/project4.jpg" class="card-img-top project-img" alt="Inventory Optimization">
+          <div class="card-body">
+            <h5 class="card-title">ColorCode Coach — “A voice-enabled logic puzzle to train young minds.” </h5>
+            <p class="card-text">A kid-friendly, voice-optional code-breaking game I built for my kids to help train their minds and spend less time on phones. Each round generates a random 4-color secret; players guess by typing or speaking, get automatic feedback on correct positions, and a simple logic engine works toward the solution. Pure Python and in-memory—easy to run in a notebook or classroom.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Python </span>
+              <span class="badge bg-danger">TensorFlow/Keras</span>
+              <span class="badge bg-danger">propositional logic</span>
+              <a href="https://github.com/Saleem1975/ColorCode-Coach" class="stretched-link text-danger">View Analysis →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 5 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 5/project5.png" class="card-img-top project-img" alt="Inventory Optimization">
+          <div class="card-body">
+            <h5 class="card-title">CitySignal: NYC 311 Analytics — Insights from intake to resolution.” </h5>
+            <p class="card-text">Portfolio project using NYC 311 data: I cleaned and modeled the dataset in Power Query (types, text, ZIP, geo validation, HoursToClose, rolling 6-month window) and built a three-page Power BI report—Executive Overview, Temporal Patterns, and Geo & Neighborhoods—with slicers and navigation to explore trends, workload, and hotspots.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Power BI </span>
+              <span class="badge bg-danger">Data Cleaning</span>
+              <span class="badge bg-danger">Visualization</span>
+              <a href="https://github.com/Saleem1975/CitySignal-NYC-311-Analytics-Insights-from-intake-to-resolution" class="stretched-link text-danger">View Analysis →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 6 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 6/project6.jpg" class="card-img-top project-img" alt="Inventory Optimization">
+          <div class="card-body">
+            <h5 class="card-title">CovLens — Global COVID insights with per-capita context.” </h5>
+            <p class="card-text">This dashboard summarizes the COVID-19 situation using your CovidDeaths and CovidVaccinations tables (Our World in Data). It has a fixed time scope set in the script (by default, it uses all available dates in your database). For each country/territory, the “latest snapshot” is taken at the most recent date available within that fixed scope; OWID aggregates (e.g., “World”, “Europe”) are excluded in country rankings.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Python </span>
+              <span class="badge bg-danger">Data Cleaning</span>
+              <span class="badge bg-danger">Visualization</span>
+              <a href="https://github.com/Saleem1975/CovLens-Global-COVID-insights-with-per-capita-context" class="stretched-link text-danger">View Analysis →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 7 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 7/project7.jpg" class="card-img-top project-img" alt="Inventory Optimization">
+          <div class="card-body">
+            <h5 class="card-title">Data-Driven Optimization of 3D Printing Parameters for UAV Parts” </h5>
+            <p class="card-text">This project used in-house experimental data and data analytics to optimize 3D printing parameters for UAV parts. Through DOE with Response Surface Methodology, regression, and ANOVA, the study identified infill percentage, layer height, and number of walls as the most influential factors. Using NSGA-II Pareto front and Minitab’s Response Optimizer, the results achieved an optimal balance between lightweight design and tensile strength, providing a data-driven framework for UAV component design.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">DOE</span>
+              <span class="badge bg-danger">Regression</span>
+              <span class="badge bg-danger">ANOVA</span>
+              <a href="https://github.com/Saleem1975/Data-Driven-Optimization-of-3D-Printing-Parameters-for-UAV-Parts" class="stretched-link text-danger">View Analysis →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 8/project8.jpg" class="card-img-top project-img" alt="Inventory Optimization">
+          <div class="card-body">
+            <h5 class="card-title">Retail Bookstore Analytics: From Web to Dashboard” </h5>
+            <p class="card-text">The Retail Bookstore Analytics: From Web to Dashboard project showcases a complete data analytics workflow using Python, SQL Server, and Power BI. It involves web scraping data from an online bookstore, cleaning and storing it in a relational database, and visualizing insights through interactive dashboards. The project concludes with a Multiple Linear Regression analysis to identify key factors influencing book pricing and sales performance, demonstrating strong analytical and technical integration skills.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Web Scraping</span>
+              <span class="badge bg-danger">Regression</span>
+              <span class="badge bg-danger">SQL</span>
+              <span class="badge bg-danger">Power BI</span>
+              <span class="badge bg-danger">Python</span>
+              <a href="https://github.com/Saleem1975/Retail-Bookstore-Analytics-From-Web-to-Dashboard/tree/main" class="stretched-link text-danger">View Analysis →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 9 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 9/project9.png" class="card-img-top project-img" alt="Inventory Optimization">
+          <div class="card-body">
+            <h5 class="card-title">HR Analytics Dashboard” </h5>
+            <p class="card-text">This project presents an interactive HR Analytics Dashboard built using Tableau Desktop. The dashboard visualizes key human resource metrics to support data-driven decision-making in workforce management. It uses the dataset HR Data.xlsx, which contains employee records including demographics, job roles, performance ratings, and attrition information.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Tableau</span>
+              <span class="badge bg-danger">Visualization</span>
+              <a href="https://github.com/Saleem1975/HR-Analytics/tree/main" class="stretched-link text-danger">View Analysis →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 10 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 10/project10.jpg" class="card-img-top project-img" alt="Inventory Optimization">
+          <div class="card-body">
+            <h5 class="card-title">Real-Time Cryptocurrency Market Dashboard” </h5>
+            <p class="card-text">This project is a real-time cryptocurrency analytics dashboard built in Power BI, using live web data, Excel-based logging, and custom DAX measures. It tracks price movements, market sentiment, and liquidity, updating on refresh to support fast, informed decision-making through a clean, intuitive interface.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Real-Time</span>
+              <span class="badge bg-danger">Power BI</span>
+              <span class="badge bg-danger">DAX</span>
+              <a href="https://github.com/Saleem1975/Real-Time-Cryptocurrency-Market-Dashboard" class="stretched-link text-danger">View Analysis →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+  <div class="container">
+    <h2 class="text-center mb-5 display-5 fw-bold">Technical Expertise</h2>
+    <div class="row g-4">
+      <!-- Skill 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card skill-card text-center">
+          <div class="skill-icon">
+            <i class="bi bi-bar-chart-line"></i>
+          </div>
+          <h4>Data Visualization</h4>
+          <p>Power BI, Tableau, Matplotlib</p>
+          <div class="mt-2">
+            <span class="badge skill-badge me-1">Dashboard Design</span>
+            <span class="badge skill-badge">KPI Tracking</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skill 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card skill-card text-center">
+          <div class="skill-icon">
+            <i class="bi bi-code-slash"></i>
+          </div>
+          <h4>Programming</h4>
+          <p>Python, R, MATLAB</p>
+          <div class="mt-2">
+            <span class="badge skill-badge me-1">Pandas</span>
+            <span class="badge skill-badge">NumPy</span>
+            <span class="badge skill-badge">TensorFlow</span>
+            <span class="badge skill-badge">Scikit-learn</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skill 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card skill-card text-center">
+          <div class="skill-icon">
+            <i class="bi bi-database"></i>
+          </div>
+          <h4>Database Management</h4>
+          <p>SQL server, MySQL, PostgreSQL</p>
+          <div class="mt-2">
+            <span class="badge skill-badge me-1">ETL</span>
+            <span class="badge skill-badge">Data Modeling</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skill 4 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card skill-card text-center">
+          <div class="skill-icon">
+            <i class="bi bi-calculator"></i>
+          </div>
+          <h4>Statistical Analysis</h4>
+          <p>Regression, Hypothesis Testing, ANOVA</p>
+          <div class="mt-2">
+            <span class="badge skill-badge me-1">Forecasting</span>
+            <span class="badge skill-badge">DOE</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skill 5 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card skill-card text-center">
+          <div class="skill-icon">
+            <i class="bi bi-gear"></i>
+          </div>
+          <h4>Process Optimization</h4>
+          <p>Lean Six Sigma, Discrete-Event Simulation, Mathematical Modeling</p>
+          <div class="mt-2">
+            <span class="badge skill-badge me-1">Value Stream</span>
+            <span class="badge skill-badge">ProModel</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skill 6 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card skill-card text-center">
+          <div class="skill-icon">
+            <i class="bi bi-clipboard-data"></i>
+          </div>
+          <h4>Business Intelligence</h4>
+          <p>Excel, Power Query, DAX</p>
+          <div class="mt-2">
+            <span class="badge skill-badge me-1">Reporting</span>
+            <span class="badge skill-badge">Data Storytelling</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Certifications Section -->
+<section id="certifications" class="certifications-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 display-5 fw-bold">Certificates</h2>
+    <div class="row g-4">
+      <!-- Certificate 1 -->
+      <div class="col-12 col-md-6">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="images\skills\CAP_logo.jpeg" class="card-img-top img-fluid object-fit-contain" alt="CAP Logo" style="height: 200px; object-fit: contain;">
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title">Certified Analytics Professional (CAP)</h4>
+            <p class="card-text flex-grow-1">The Certified Analytics Professional (CAP) credential recognizes my ability to transform data into valuable insights. This globally recognized certification demonstrates my competence in the entire analytics process, from framing business and analytics problems to deploying actionable solutions.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <span class="badge bg-primary me-1">Data-Driven Decision Making</span>
+            <span class="badge bg-primary">Predictive Analytics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="col-12 col-md-6">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="images\skills\PL300_logo.jpg" class="card-img-top img-fluid object-fit-contain" alt="PL300 Logo" style="height: 200px; object-fit: contain;">
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title">Power BI Data Analyst Associate (PL300)</h4>
+            <p class="card-text flex-grow-1">Power BI Data Analyst Associate certification (PL-300) demonstrates my expertise in transforming raw data into actionable insights through data modeling, visualization, and analytics. This credential complements my academic and research background by validating my ability to design effective dashboards, apply advanced DAX calculations, and manage enterprise-level BI solutions, enabling data-driven decision-making across organizations.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <span class="badge bg-warning text-dark me-1">Data Modeling</span>
+            <span class="badge bg-warning text-dark">Interactive Dashboards</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="col-12 col-md-6">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="images\skills\PMI_logo.jpeg" class="card-img-top img-fluid object-fit-contain" alt="PMP Logo" style="height: 200px; object-fit: contain;">
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title">Project Management Professional (PMP)</h4>
+            <p class="card-text flex-grow-1">The Project Management Professional (PMP) certification from the Project Management Institute (PMI) validates my expertise in managing projects effectively and efficiently. This prestigious certification underscores my ability to lead and deliver successful projects across diverse domains.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <span class="badge bg-success me-1">Stakeholder Alignment</span>
+            <span class="badge bg-success">Analytics Project Leadership</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 4 -->
+      <div class="col-12 col-md-6">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="images\skills\APICS_logo.jpeg" class="card-img-top img-fluid object-fit-contain" alt="APICS Logo" style="height: 200px; object-fit: contain;">
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title">Certified Supply Chain Professional (CSCP)</h4>
+            <p class="card-text flex-grow-1">The Certified Supply Chain Professional (CSCP) credential from APICS highlights my ability to integrate supply chain strategies with data-driven insights. This certification complements my data analytics skills by enabling me to leverage analytical techniques to optimize supply chain performance and decision-making.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <span class="badge bg-warning text-dark me-1">Supply Chain Analytics</span>
+            <span class="badge bg-warning text-dark">Operational Data Insights</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+ 
+
+
+
+
+
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="text-center mb-4 display-5 fw-bold">Contact Me</h2>
+    <p class="lead text-center mb-5">Let's connect and discuss data-driven solutions for your business.</p>
+    
+    
+    
+    <!-- Social Buttons -->
+    <div class="text-center mt-5">
+      <div class="d-flex justify-content-center">
+        <a href="https://www.linkedin.com/in/saleem-ramadan/" class="social-btn me-3">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="mailto:linkedinsaleemramadan@gmail.com " class="social-btn">
+          <i class="bi bi-envelope"></i>
+        </a>
+      </div>
+      <p class="mt-4">linkedinsaleemramadan@gmail.com | +1 (555) 123-4567</p>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
