@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saleem Ramadan | Operations Transformation & Analytics Consultant</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<style>
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #8B0000;
+    --light-bg: #f8f9fa;
+}
+
+/* Sticky Navbar */
+.sticky-top {
+    background-color: var(--primary-color) !important;
+}
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+.navbar-nav .nav-link:hover {
+    color: var(--accent-color) !important;
+}
+.navbar-brand {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll margin for fixed navbar */
+#home, #about, #consulting, #target-roles, #projects, #applied-research, #skills, #certifications, #contact {
+    scroll-margin-top: 70px;
+}
+
+/* Home anchor */
+#home {
+    display: block;
+    height: 0;
+}
+
+/* About Section */
+.about-section {
+    text-align: center;
+    padding: 6rem 1.5rem;
+    background: linear-gradient(rgba(255,255,255,0.97), rgba(255,255,255,0.97)), url('images/bg-pattern.png');
+}
+.profile-avatar {
+    width: 220px;
+    height: 220px;
+    border: 4px solid var(--primary-color);
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+
+/* Consulting Focus Areas Section */
+.consulting-section {
+    padding: 5rem 0;
+    background-color: #ffffff;
+}
+.focus-card {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    height: 100%;
+    background: var(--light-bg);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.focus-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+.focus-icon {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+}
+
+
+/* Target Consulting Roles Section */
+.target-roles-section {
+    padding: 5rem 0;
+    background-color: var(--light-bg);
+}
+.role-card {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    height: 100%;
+    background: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.role-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+.role-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+}
+
+/* Projects Section */
+.projects-section {
+    background-color: var(--light-bg);
+    padding: 6rem 0;
+}
+.project-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(0,0,0,0.1);
+    height: 100%;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.project-img {
+    height: 250px;
+    object-fit: cover;
+}
+.project-card .card-body {
+    display: flex;
+    flex-direction: column;
+}
+.project-card .card-body > .d-flex {
+    margin-top: auto;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+.project-card .card-body > .d-flex a {
+    margin-left: auto;
+}
+
+
+/* Applied Research for Consulting Use Cases Section */
+.applied-research-section {
+    padding: 6rem 0;
+    background-color: #ffffff;
+}
+.research-card {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    height: 100%;
+    background: var(--light-bg);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+.research-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+.research-icon {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+}
+.research-basis {
+    font-size: 0.9rem;
+    color: #495057;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 0.75rem;
+    margin-top: auto;
+}
+.research-badge {
+    background-color: var(--primary-color);
+}
+
+
+.applied-research-img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background-color: #ffffff;
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 0.25rem;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 6rem 0;
+    background-color: #ffffff;
+}
+.skill-card {
+    border: none;
+    background: var(--light-bg);
+    transition: transform 0.3s;
+    height: 100%;
+    padding: 1.5rem;
+}
+.skill-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+}
+.skill-card:hover .skill-icon {
+    color: var(--accent-color);
+}
+.skill-badge {
+    background-color: var(--primary-color);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 6rem 0;
+}
+.contact-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-btn:hover {
+    background-color: #6B0000;
+    transform: translateY(-3px);
+}
+.social-icon {
+    width: 25px;
+    filter: brightness(0) invert(1);
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(139, 0, 0, 0.25);
+}
+
+/* Resume Button */
+.resume-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    transition: all 0.3s;
+}
+.resume-btn:hover {
+    background-color: #1a252f;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-section, .consulting-section, .projects-section, .applied-research-section, .skills-section {
+        padding: 4rem 0;
+    }
+    .profile-avatar {
+        width: 180px;
+        height: 180px;
+    }
+    .btn-lg {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔥 Sticky Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Saleem Ramadan</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#consulting">Consulting Focus</a></li>
+        <li class="nav-item"><a class="nav-link" href="#target-roles">Target Roles</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#applied-research">Applied Research</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certifications">Certificates</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ✏️ Home Section Anchor -->
+<section id="home"></section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="container">
+    <h1 class="display-4 fw-bold mb-4">Operations Transformation & Analytics Consultant | Industrial Engineering, AI, Supply Chain & Healthcare Performance</h1>
+    <div class="avatar-container mb-5">
+      <img src="./images/about/about.jpg" alt="Saleem Ramadan" class="profile-avatar rounded-circle">
+    </div>
+    <div class="about-content mx-auto" style="max-width: 800px;">
+      <p class="lead">I help organizations improve operational performance through <strong>data analytics, process optimization, AI-enabled decision support,</strong> and <strong>industrial engineering methods</strong>. My work combines operations research, machine learning, Power BI dashboards, SQL/Python analytics, Lean Six Sigma, and business process improvement to support better decisions in healthcare, manufacturing, supply chain, education, and service systems.</p>
+      <div class="mt-4 d-flex flex-wrap justify-content-center">
+        <a href="#projects" class="btn btn-lg btn-danger me-3 mb-2">
+          View Consulting Case Studies
+        </a>
+        <a href="#consulting" class="btn btn-lg btn-outline-danger me-3 mb-2">
+          Consulting Focus Areas
+        </a>
+        <a href="resume/Saleem_Ramadan_Consulting_Resume.pdf" download="Saleem_Ramadan_Consulting_Resume.pdf" class="btn btn-lg resume-btn mb-2">
+          <i class="bi bi-download me-2"></i>Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Consulting Focus Areas Section -->
+<section id="consulting" class="consulting-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold">Consulting Focus Areas</h2>
+      <p class="lead mx-auto" style="max-width: 850px;">
+        I focus on helping organizations improve performance by combining industrial engineering, analytics, optimization, AI-enabled decision support, and practical implementation planning.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="focus-card text-center">
+          <div class="focus-icon"><i class="bi bi-diagram-3"></i></div>
+          <h5 class="fw-bold">Operations Transformation</h5>
+          <p class="mb-0">Process improvement, workflow redesign, capacity analysis, and operational performance improvement.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="focus-card text-center">
+          <div class="focus-icon"><i class="bi bi-graph-up-arrow"></i></div>
+          <h5 class="fw-bold">Data & Analytics Advisory</h5>
+          <p class="mb-0">KPI development, executive dashboards, predictive analytics, and data-driven decision support.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="focus-card text-center">
+          <div class="focus-icon"><i class="bi bi-box-seam"></i></div>
+          <h5 class="fw-bold">Supply Chain & Manufacturing</h5>
+          <p class="mb-0">Production planning, inventory insights, manufacturing analytics, and process optimization.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="focus-card text-center">
+          <div class="focus-icon"><i class="bi bi-hospital"></i></div>
+          <h5 class="fw-bold">Healthcare Operations</h5>
+          <p class="mb-0">Patient flow, scheduling, resource utilization, service efficiency, and healthcare performance improvement.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="focus-card text-center">
+          <div class="focus-icon"><i class="bi bi-cpu"></i></div>
+          <h5 class="fw-bold">AI-Enabled Process Improvement</h5>
+          <p class="mb-0">Machine learning, predictive models, GenAI-supported insights, and intelligent decision support.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="focus-card text-center">
+          <div class="focus-icon"><i class="bi bi-speedometer2"></i></div>
+          <h5 class="fw-bold">BI & KPI Dashboards</h5>
+          <p class="mb-0">Power BI, Tableau, Excel dashboards, performance tracking, and executive reporting.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="focus-card text-center">
+          <div class="focus-icon"><i class="bi bi-tools"></i></div>
+          <h5 class="fw-bold">Lean Six Sigma</h5>
+          <p class="mb-0">Root-cause analysis, value stream mapping, statistical process control, and waste reduction.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="focus-card text-center">
+          <div class="focus-icon"><i class="bi bi-lightbulb"></i></div>
+          <h5 class="fw-bold">Digital Transformation Roadmaps</h5>
+          <p class="mb-0">Data maturity assessment, analytics roadmap design, governance planning, and implementation support.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Target Consulting Roles Section -->
+<section id="target-roles" class="target-roles-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold">Target Consulting Roles</h2>
+      <p class="lead mx-auto" style="max-width: 850px;">
+        These are the consulting roles that best match my background in industrial engineering, analytics, operations research, supply chain, healthcare performance, and digital transformation.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="role-card text-center">
+          <div class="role-icon"><i class="bi bi-arrow-repeat"></i></div>
+          <h5 class="fw-bold">Operations Transformation Consultant</h5>
+          <p class="mb-0">Improving process performance, capacity, cycle time, and service efficiency.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="role-card text-center">
+          <div class="role-icon"><i class="bi bi-bar-chart"></i></div>
+          <h5 class="fw-bold">Senior Consultant – Data & Analytics</h5>
+          <p class="mb-0">Turning data into dashboards, predictive insights, and executive recommendations.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="role-card text-center">
+          <div class="role-icon"><i class="bi bi-truck"></i></div>
+          <h5 class="fw-bold">Supply Chain Analytics Consultant</h5>
+          <p class="mb-0">Supporting planning, inventory, logistics, and operational decision-making.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="role-card text-center">
+          <div class="role-icon"><i class="bi bi-hospital"></i></div>
+          <h5 class="fw-bold">Healthcare Operations Consultant</h5>
+          <p class="mb-0">Improving patient flow, scheduling, resource use, and hospital performance.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="role-card text-center">
+          <div class="role-icon"><i class="bi bi-buildings"></i></div>
+          <h5 class="fw-bold">Manufacturing Analytics Consultant</h5>
+          <p class="mb-0">Applying analytics, DOE, optimization, quality, and Industry 4.0 methods.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="role-card text-center">
+          <div class="role-icon"><i class="bi bi-sliders"></i></div>
+          <h5 class="fw-bold">Process Improvement Consultant</h5>
+          <p class="mb-0">Using Lean Six Sigma, KPI design, root-cause analysis, and workflow redesign.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="role-card text-center">
+          <div class="role-icon"><i class="bi bi-cpu"></i></div>
+          <h5 class="fw-bold">AI Transformation Consultant</h5>
+          <p class="mb-0">Using AI-enabled insights, predictive analytics, and decision-support systems.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="role-card text-center">
+          <div class="role-icon"><i class="bi bi-diagram-2"></i></div>
+          <h5 class="fw-bold">Digital Transformation Consultant</h5>
+          <p class="mb-0">Building analytics roadmaps, BI adoption plans, and data-driven operating models.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+  <div class="container">
+    <h2 class="text-center mb-5 display-5 fw-bold">Featured Consulting Case Studies</h2>
+    <div class="row g-4">
+
+      <!-- Case Study 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 1/project1.jpg" class="card-img-top project-img" alt="Hydroponic production planning optimization">
+          <div class="card-body">
+            <h5 class="card-title">Supply Chain and Operations Planning Optimization for Hydroponic Production</h5>
+            <p class="card-text">Analyzed planting schedules, harvesting decisions, production volume, market demand, operating costs, and profitability to support data-driven planning for a hydroponic farm. Built an integrated Python, SQL, Excel, and Power BI workflow to identify high-value crops, evaluate supply–demand gaps, and recommend actions to improve capacity utilization and financial performance.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Python</span>
+              <span class="badge bg-danger">SQL</span>
+              <span class="badge bg-danger">Power BI</span>
+              <a href="https://github.com/Saleem1975/Hydroponic-Farm/tree/main" class="stretched-link text-danger">View Case Study →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 7/project7.jpg" class="card-img-top project-img" alt="Advanced manufacturing optimization for UAV parts">
+          <div class="card-body">
+            <h5 class="card-title">Advanced Manufacturing Optimization: 3D Printing Parameters for UAV Parts</h5>
+            <p class="card-text">An applied manufacturing optimization case using DOE, Response Surface Methodology, regression, ANOVA, NSGA-II Pareto optimization, and Minitab Response Optimizer to balance tensile strength and lightweight design. The work demonstrates how analytics can reduce trial-and-error experimentation and support better engineering decisions.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">DOE</span>
+              <span class="badge bg-danger">Optimization</span>
+              <span class="badge bg-danger">ANOVA</span>
+              <a href="https://github.com/Saleem1975/Data-Driven-Optimization-of-3D-Printing-Parameters-for-UAV-Parts" class="stretched-link text-danger">View Case Study →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 5/project5.png" class="card-img-top project-img" alt="NYC 311 public sector service operations analytics">
+          <div class="card-body">
+            <h5 class="card-title">Public Sector Service Operations: NYC 311 Response-Time Analytics</h5>
+            <p class="card-text">A service-operations analytics case using NYC 311 data to examine complaint workload, response times, temporal patterns, and geographic hotspots. The Power BI report supports public-sector performance monitoring and can be extended into staffing, backlog reduction, and resource allocation recommendations.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Power BI</span>
+              <span class="badge bg-danger">Service KPIs</span>
+              <span class="badge bg-danger">Operations</span>
+              <a href="https://github.com/Saleem1975/CitySignal-NYC-311-Analytics-Insights-from-intake-to-resolution" class="stretched-link text-danger">View Case Study →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 4 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 3/project3.png" class="card-img-top project-img" alt="Financial services loan portfolio analytics">
+          <div class="card-body">
+            <h5 class="card-title">Financial Services Analytics: Loan Portfolio Monitoring and Risk Insights</h5>
+            <p class="card-text">An Excel-based financial services analytics case designed to monitor lending KPIs, loan quality, borrower profiles, and portfolio trends. The dashboard supports executive review of loan performance and provides a foundation for risk segmentation and portfolio management recommendations.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Excel</span>
+              <span class="badge bg-danger">KPIs</span>
+              <span class="badge bg-danger">Risk Analytics</span>
+              <a href="https://github.com/Saleem1975/bank-loan-report-dashboard-Excel" class="stretched-link text-danger">View Case Study →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 5 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 9/project9.png" class="card-img-top project-img" alt="Workforce analytics HR performance and attrition dashboard">
+          <div class="card-body">
+            <h5 class="card-title">Workforce Analytics: HR Performance and Attrition Dashboard</h5>
+            <p class="card-text">A workforce analytics case built in Tableau to visualize employee demographics, job roles, performance ratings, and attrition indicators. The dashboard supports people analytics discussions around retention risk, workforce planning, and talent-performance monitoring.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Tableau</span>
+              <span class="badge bg-danger">HR Analytics</span>
+              <span class="badge bg-danger">Workforce</span>
+              <a href="https://github.com/Saleem1975/HR-Analytics/tree/main" class="stretched-link text-danger">View Case Study →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 6 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 8/project8.jpg" class="card-img-top project-img" alt="Retail bookstore commercial analytics">
+          <div class="card-body">
+            <h5 class="card-title">Commercial Analytics: Retail Bookstore Pricing and Sales Performance</h5>
+            <p class="card-text">A commercial analytics case that combines Python web scraping, SQL Server data storage, Power BI dashboards, and multiple linear regression to analyze pricing and sales performance. The project demonstrates an end-to-end analytics workflow from data acquisition to business insight generation.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Python</span>
+              <span class="badge bg-danger">SQL</span>
+              <span class="badge bg-danger">Power BI</span>
+              <a href="https://github.com/Saleem1975/Retail-Bookstore-Analytics-From-Web-to-Dashboard/tree/main" class="stretched-link text-danger">View Case Study →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 7 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 2/project2.jpg" class="card-img-top project-img" alt="Experience analytics blended learning satisfaction dashboard">
+          <div class="card-body">
+            <h5 class="card-title">Experience Analytics: Blended Learning Satisfaction and Improvement Insights</h5>
+            <p class="card-text">An experience analytics case using survey data to understand satisfaction patterns in blended learning. The project uses Power BI, Microsoft Forms, and Minitab to transform raw responses into insights that can support service improvement, stakeholder communication, and action planning.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Power BI</span>
+              <span class="badge bg-danger">Survey Analytics</span>
+              <span class="badge bg-danger">Minitab</span>
+              <a href="https://github.com/Saleem1975/Blended-Teaching-Survey" class="stretched-link text-danger">View Case Study →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 8 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 6/project6.jpg" class="card-img-top project-img" alt="Public health analytics COVID dashboard">
+          <div class="card-body">
+            <h5 class="card-title">Public Health Analytics: Global COVID Trends with Per-Capita Context</h5>
+            <p class="card-text">A public health analytics case using cleaned COVID deaths and vaccination data from Our World in Data. The dashboard provides per-capita comparisons, country-level snapshots, and ranking views to support population-level monitoring and evidence-based decision-making.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Python</span>
+              <span class="badge bg-danger">Data Cleaning</span>
+              <span class="badge bg-danger">Visualization</span>
+              <a href="https://github.com/Saleem1975/CovLens-Global-COVID-insights-with-per-capita-context" class="stretched-link text-danger">View Case Study →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Technical Project 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 10/project10.jpg" class="card-img-top project-img" alt="Real-time cryptocurrency market analytics dashboard">
+          <div class="card-body">
+            <h5 class="card-title">Additional Technical Analytics: Real-Time Cryptocurrency Market Dashboard</h5>
+            <p class="card-text">A real-time analytics dashboard built in Power BI using live web data, Excel-based logging, and DAX measures. This project demonstrates dashboard automation, refresh-based reporting, market sentiment tracking, and liquidity indicator monitoring.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Power BI</span>
+              <span class="badge bg-danger">DAX</span>
+              <span class="badge bg-danger">Real-Time</span>
+              <a href="https://github.com/Saleem1975/Real-Time-Cryptocurrency-Market-Dashboard" class="stretched-link text-danger">View Project →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Technical Project 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 project-card">
+          <img src="images/projects/Project 4/project4.jpg" class="card-img-top project-img" alt="Python logic puzzle education project">
+          <div class="card-body">
+            <h5 class="card-title">Additional Technical Project: ColorCode Coach Logic Puzzle</h5>
+            <p class="card-text">A Python-based interactive logic puzzle that demonstrates structured reasoning, feedback automation, and educational design. The project is kept as an additional technical example because it is useful creatively but less central to consulting, operations, and analytics advisory roles.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-danger">Python</span>
+              <span class="badge bg-danger">Logic</span>
+              <span class="badge bg-danger">Education</span>
+              <a href="https://github.com/Saleem1975/ColorCode-Coach" class="stretched-link text-danger">View Project →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Applied Research for Consulting Use Cases Section -->
+<section id="applied-research" class="applied-research-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold">Applied Research for Consulting Use Cases</h2>
+      <p class="lead mx-auto" style="max-width: 900px;">
+        Selected research translated into practical consulting applications in healthcare operations, manufacturing analytics, supply chain optimization, predictive maintenance, quality improvement, and AI-enabled decision support.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Applied Research 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="research-card">
+          <div class="research-icon"><i class="bi bi-hospital"></i></div>
+          <img src="images/projects/Project 11/Project 11.jpg" class="img-fluid rounded mb-3 applied-research-img" alt="Patient waiting time comparison for CNN-based operating room scheduling">
+          <h5 class="fw-bold">Healthcare Operations Transformation</h5>
+          <p>Data-driven prediction of remaining intra-surgical time to support operating room scheduling, resource utilization, patient flow, and real-time decision-making.</p>
+          <div class="mb-3">
+            <span class="badge research-badge me-1">Healthcare Analytics</span>
+            <span class="badge research-badge me-1">Prediction</span>
+            <span class="badge research-badge">OR Efficiency</span>
+          </div>
+          <p class="research-basis mb-0"><strong>Consulting value:</strong> Helps hospitals improve scheduling accuracy, reduce delays, and increase operating room efficiency.</p>
+          <div class="mt-3">
+            <a href="https://github.com/Saleem1975/healthcare-or-dynamic-scheduling" target="_blank" rel="noopener" class="btn btn-outline-danger btn-sm">
+              <i class="bi bi-github me-1"></i>View GitHub Project →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Applied Research 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="research-card">
+          <div class="research-icon"><i class="bi bi-gear-wide-connected"></i></div>
+          <img src="images/projects/Project 12/Project 12.jpg" class="img-fluid rounded mb-3 applied-research-img" alt="Strength-to-weight optimization for 3D-printed UAV parts">
+          <h5 class="fw-bold">Advanced Manufacturing Optimization</h5>
+          <p>Optimization of 3D printing parameters for UAV parts using DOE, regression, ANOVA, and multi-objective optimization to improve strength-to-weight performance.</p>
+          <div class="mb-3">
+            <span class="badge research-badge me-1">DOE</span>
+            <span class="badge research-badge me-1">Optimization</span>
+            <span class="badge research-badge">Manufacturing</span>
+          </div>
+          <p class="research-basis mb-0"><strong>Consulting value:</strong> Supports better production settings, fewer trial-and-error experiments, and stronger engineering decisions.</p>
+          <div class="mt-3">
+            <a href="https://github.com/Saleem1975/uav-3d-printing-optimization" target="_blank" rel="noopener" class="btn btn-outline-danger btn-sm">
+              <i class="bi bi-github me-1"></i>View GitHub Project →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Applied Research 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="research-card">
+          <div class="research-icon"><i class="bi bi-activity"></i></div>
+          <img src="images/projects/Project 13/Project 13.jpg" class="img-fluid rounded mb-3 applied-research-img" alt="Remaining useful life prediction summary for high-reliability equipment">
+          <h5 class="fw-bold">Predictive Maintenance & Asset Reliability</h5>
+          <p>Remaining useful life prediction for high-reliability equipment using machine learning methods to support predictive maintenance and downtime reduction.</p>
+          <div class="mb-3">
+            <span class="badge research-badge me-1">RUL</span>
+            <span class="badge research-badge me-1">Reliability</span>
+            <span class="badge research-badge">Industry 4.0</span>
+          </div>
+          <p class="research-basis mb-0"><strong>Consulting value:</strong> Helps organizations move from reactive maintenance to data-driven asset management.</p>
+          <div class="mt-3">
+            <a href="https://github.com/Saleem1975/predictive-maintenance-rul-lstm-mhsa" target="_blank" rel="noopener" class="btn btn-outline-danger btn-sm">
+              <i class="bi bi-github me-1"></i>View GitHub Project →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Applied Research 4 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="research-card">
+          <div class="research-icon"><i class="bi bi-boxes"></i></div>
+          <img src="images/projects/Project 14/Project 14.jpg" class="img-fluid rounded mb-3 applied-research-img" alt="Pallet loading optimization summary for warehouse and supply chain operations">
+          <h5 class="fw-bold">Supply Chain & Warehouse Optimization</h5>
+          <p>Pallet loading optimization considering storage time and relative humidity to improve warehouse utilization, storage decisions, and logistics performance.</p>
+          <div class="mb-3">
+            <span class="badge research-badge me-1">Supply Chain</span>
+            <span class="badge research-badge me-1">Warehouse</span>
+            <span class="badge research-badge">Logistics</span>
+          </div>
+          <p class="research-basis mb-0"><strong>Consulting value:</strong> Supports storage policy design, better space utilization, and improved material-flow decisions.</p>
+          <div class="mt-3">
+            <a href="https://github.com/Saleem1975/pallet-loading-warehouse-optimization" target="_blank" rel="noopener" class="btn btn-outline-danger btn-sm">
+              <i class="bi bi-github me-1"></i>View GitHub Project →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Applied Research 5 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="research-card">
+          <div class="research-icon"><i class="bi bi-cpu"></i></div>
+          <img src="images/projects/Project 15/project 15.jpg" class="img-fluid rounded mb-3 applied-research-img" alt="AI-enabled quality monitoring using multimodal 2D-CNN for control chart pattern recognition">
+          <h5 class="fw-bold">AI-Enabled Quality Monitoring</h5>
+          <p>Control chart pattern recognition using convolutional neural networks to support early detection of process abnormalities and quality improvement.</p>
+          <div class="mb-3">
+            <span class="badge research-badge me-1">CNN</span>
+            <span class="badge research-badge me-1">Quality</span>
+            <span class="badge research-badge">SPC</span>
+          </div>
+          <p class="research-basis mb-0"><strong>Consulting value:</strong> Enables smarter quality monitoring, faster abnormality detection, and improved process control.</p>
+          <div class="mt-3">
+            <a href="https://github.com/Saleem1975/ai-enabled-quality-monitoring" target="_blank" rel="noopener" class="btn btn-outline-danger btn-sm">
+              <i class="bi bi-github me-1"></i>View GitHub Project →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Applied Research 6 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="research-card">
+          <div class="research-icon"><i class="bi bi-calendar-check"></i></div>
+          <img src="images/projects/Project 16/project16.jpg" class="img-fluid rounded mb-3 applied-research-img" alt="Production scheduling optimization using genetic algorithm for total tardiness reduction">
+          <h5 class="fw-bold">Production Scheduling Optimization</h5>
+          <p>Genetic algorithm-based scheduling models to reduce tardiness, improve throughput, and support manufacturing planning decisions in complex production systems.</p>
+          <div class="mb-3">
+            <span class="badge research-badge me-1">Scheduling</span>
+            <span class="badge research-badge me-1">Genetic Algorithms</span>
+            <span class="badge research-badge">Throughput</span>
+          </div>
+          <p class="research-basis mb-0"><strong>Consulting value:</strong> Helps manufacturers improve planning quality, reduce delays, and use constrained resources more effectively.</p>
+          <div class="mt-3">
+            <a href="https://github.com/Saleem1975/production-scheduling-optimization-ga" target="_blank" rel="noopener" class="btn btn-outline-danger btn-sm">
+              <i class="bi bi-github me-1"></i>View GitHub Project →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+  <div class="container">
+    <h2 class="text-center mb-5 display-5 fw-bold">Technical Expertise</h2>
+    <div class="row g-4">
+      <!-- Skill 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card skill-card text-center">
+          <div class="skill-icon">
+            <i class="bi bi-bar-chart-line"></i>
+          </div>
+          <h4>Data Visualization</h4>
+          <p>Power BI, Tableau, Matplotlib</p>
+          <div class="mt-2">
+            <span class="badge skill-badge me-1">Dashboard Design</span>
+            <span class="badge skill-badge">KPI Tracking</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skill 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card skill-card text-center">
+          <div class="skill-icon">
+            <i class="bi bi-code-slash"></i>
+          </div>
+          <h4>Programming</h4>
+          <p>Python, R, MATLAB</p>
+          <div class="mt-2">
+            <span class="badge skill-badge me-1">Pandas</span>
+            <span class="badge skill-badge">NumPy</span>
+            <span class="badge skill-badge">TensorFlow</span>
+            <span class="badge skill-badge">Scikit-learn</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skill 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card skill-card text-center">
+          <div class="skill-icon">
+            <i class="bi bi-database"></i>
+          </div>
+          <h4>Database Management</h4>
+          <p>SQL Server, MySQL, PostgreSQL</p>
+          <div class="mt-2">
+            <span class="badge skill-badge me-1">ETL</span>
+            <span class="badge skill-badge">Data Modeling</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skill 4 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card skill-card text-center">
+          <div class="skill-icon">
+            <i class="bi bi-calculator"></i>
+          </div>
+          <h4>Statistical Analysis</h4>
+          <p>Regression, Hypothesis Testing, ANOVA</p>
+          <div class="mt-2">
+            <span class="badge skill-badge me-1">Forecasting</span>
+            <span class="badge skill-badge">DOE</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skill 5 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card skill-card text-center">
+          <div class="skill-icon">
+            <i class="bi bi-gear"></i>
+          </div>
+          <h4>Process Optimization</h4>
+          <p>Lean Six Sigma, Discrete-Event Simulation, Mathematical Modeling</p>
+          <div class="mt-2">
+            <span class="badge skill-badge me-1">Value Stream</span>
+            <span class="badge skill-badge">ProModel</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skill 6 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card skill-card text-center">
+          <div class="skill-icon">
+            <i class="bi bi-clipboard-data"></i>
+          </div>
+          <h4>Business Intelligence</h4>
+          <p>Excel, Power Query, DAX</p>
+          <div class="mt-2">
+            <span class="badge skill-badge me-1">Reporting</span>
+            <span class="badge skill-badge">Data Storytelling</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Certifications Section -->
+<section id="certifications" class="certifications-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 display-5 fw-bold">Certificates</h2>
+    <div class="row g-4">
+      <!-- Certificate 1 -->
+      <div class="col-12 col-md-6">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="images/skills/CAP_logo.jpeg" class="card-img-top img-fluid object-fit-contain" alt="CAP Logo" style="height: 200px; object-fit: contain;">
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title">Certified Analytics Professional (CAP)</h4>
+            <p class="card-text flex-grow-1">The Certified Analytics Professional (CAP) credential recognizes my ability to transform data into valuable insights. This globally recognized certification demonstrates competence across the analytics lifecycle, from framing business problems to deploying actionable solutions.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <span class="badge bg-primary me-1">Analytics Strategy</span>
+            <span class="badge bg-primary">Predictive Analytics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="col-12 col-md-6">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="images/skills/PL300_logo.jpg" class="card-img-top img-fluid object-fit-contain" alt="PL300 Logo" style="height: 200px; object-fit: contain;">
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title">Microsoft Certified: Power BI Data Analyst Associate</h4>
+            <p class="card-text flex-grow-1">The Power BI Data Analyst Associate certification validates my ability to prepare, model, analyze, and visualize data to support executive reporting, KPI monitoring, and data-driven decision-making across organizations.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <span class="badge bg-warning text-dark me-1">Data Modeling</span>
+            <span class="badge bg-warning text-dark">Interactive Dashboards</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="col-12 col-md-6">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="images/skills/Microsoft-Logo-3-832x1024.jpg" class="card-img-top img-fluid object-fit-contain" alt="Microsoft logo" style="height: 200px; object-fit: contain;"><div class="card-body d-flex flex-column">
+            <h4 class="card-title">Introduction to Generative AI for Data Analysis</h4>
+            <p class="card-text flex-grow-1">Completed through Microsoft via Coursera, this certificate strengthens my ability to connect generative AI concepts with analytics workflows, business insight generation, and AI-enabled decision support.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <span class="badge bg-info text-dark me-1">Generative AI</span>
+            <span class="badge bg-info text-dark">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 4 -->
+      <div class="col-12 col-md-6">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="images/skills/Vanderbelt University.jpg" class="card-img-top img-fluid object-fit-contain" alt="Vanderbilt University logo" style="height: 200px; object-fit: contain;"><div class="card-body d-flex flex-column">
+            <h4 class="card-title">Prompt Engineering for ChatGPT</h4>
+            <p class="card-text flex-grow-1">Completed through Vanderbilt University via Coursera, this certificate supports the use of structured prompting for analytics, reporting, problem-solving, executive communication, and AI-assisted productivity.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <span class="badge bg-secondary me-1">Prompt Engineering</span>
+            <span class="badge bg-secondary">AI-Assisted Consulting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 5 -->
+      <div class="col-12 col-md-6">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="images/skills/Duke university.png" class="card-img-top img-fluid object-fit-contain" alt="Duke University logo" style="height: 200px; object-fit: contain;"><div class="card-body d-flex flex-column">
+            <h4 class="card-title">Managing Big Data with MySQL</h4>
+            <p class="card-text flex-grow-1">Completed through Duke University via Coursera, this certificate supports my ability to work with relational data, SQL-based analysis, database querying, and data preparation for business intelligence and analytics projects.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <span class="badge bg-danger me-1">SQL</span>
+            <span class="badge bg-danger">Big Data Foundations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 6 -->
+      <div class="col-12 col-md-6">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="images/skills/APICS_logo.jpeg" class="card-img-top img-fluid object-fit-contain" alt="APICS Logo" style="height: 200px; object-fit: contain;">
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title">Certified Supply Chain Professional (CSCP)</h4>
+            <p class="card-text flex-grow-1">The Certified Supply Chain Professional credential from APICS / ASCM highlights my ability to connect supply chain strategy, operations planning, logistics, and analytics to improve organizational performance.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <span class="badge bg-warning text-dark me-1">Supply Chain Analytics</span>
+            <span class="badge bg-warning text-dark">Operations Planning</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 7 -->
+      <div class="col-12 col-md-6">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="images/skills/PMI_logo.jpeg" class="card-img-top img-fluid object-fit-contain" alt="PMP Logo" style="height: 200px; object-fit: contain;">
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title">Project Management Professional (PMP)</h4>
+            <p class="card-text flex-grow-1">The Project Management Professional certification from the Project Management Institute validates my ability to lead projects, manage stakeholders, structure delivery plans, and support implementation-focused consulting work.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <span class="badge bg-success me-1">Stakeholder Alignment</span>
+            <span class="badge bg-success">Project Leadership</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+ 
+
+
+
+
+
+
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="text-center mb-4 display-5 fw-bold">Contact Me</h2>
+    <p class="lead text-center mb-5">
+      Let's connect and discuss data-driven solutions for your business.
+    </p>
+
+    <!-- Contact Buttons -->
+    <div class="text-center mt-5">
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+
+        <a href="https://www.linkedin.com/in/saleem-ramadan/"
+           class="btn btn-primary"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Open Saleem Ramadan LinkedIn profile">
+          <i class="bi bi-linkedin me-2"></i>LinkedIn Profile
+        </a>
+
+        <a href="tel:+13145463300"
+           class="btn btn-outline-light"
+           aria-label="Call Saleem Ramadan">
+          <i class="bi bi-telephone me-2"></i>Call Me
+        </a>
+
+        <a href="mailto:linkedinsaleemramadan@gmail.com"
+           class="btn btn-outline-primary"
+           aria-label="Email Saleem Ramadan">
+          <i class="bi bi-envelope me-2"></i>Email Me
+        </a>
+
+      </div>
+
+      <p class="mt-4 mb-1">
+        <a href="mailto:linkedinsaleemramadan@gmail.com">
+          linkedinsaleemramadan@gmail.com
+        </a>
+      </p>
+      <p class="mb-0">
+        <a href="tel:+13145463300">
+          +1 314 546 3300
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
